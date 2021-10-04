@@ -1,6 +1,6 @@
 //Teste de Requisições REST
 @baseURL = http://localhost:4000
-@id = 615a6a824813d0998c7ee49c
+@id = 615b7f636e89af4250050760
 @id_anunciante = 615a538e3a483144f0ef0ef5
 
 ###
@@ -19,16 +19,16 @@ POST {{baseURL}}/anuncio
 Content-Type: application/json
 
 {
-    "descricao": "Vendo chalé em Itu",
-    "endereco.logradouro": "Rua Marechal Rondom",
-    "endereco.bairro": "Vila Nova",
-    "endereco.cidade": "Itu",
+    "descricao": "Alugo casa de praia em Guarujá",
+    "endereco.logradouro": "Rua Pe. Miguel",
+    "endereco.bairro": "Centro",
+    "endereco.cidade": "Guarujá",
     "endereco.uf": "SP",
-    "endereco.numero": "784",
+    "endereco.numero": "120",
     "endereco.cep": "",
     "endereco.complemento": "",
-    "preco": 150000,
-    "anunciante": "615a715faaf6cbec349ed3d2",
+    "preco": "150000",
+    "anunciante": "615b792a6e89af4250050747",
     "tipo_anuncio": "Locação",
     "qtd_comodos.garagem": 1,
     "qtd_comodos.sala": 1,
@@ -50,7 +50,7 @@ PUT {{baseURL}}/anuncio
 Content-Type: application/json
 
 {
-    "_id": "615a6a824813d0998c7ee49c",
+    "_id": "615b7f636e89af4250050760",
     "descricao": "Alugo casa próxima ao quartel de Itu. Aceito crianças e animais domésticos.",
     "endereco.logradouro": "Av. Marechal Deodoro",
     "endereco.bairro": "Centro",
