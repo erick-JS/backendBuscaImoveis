@@ -1,6 +1,6 @@
 //Teste de Requisições REST
 @baseURL = http://localhost:4000
-@id = 615a421d4b82e7c183c50f45
+@id = 615b7d6d6e89af4250050755
 
 ###
 //GET - Lista as informações do usuário pelo ID informado
@@ -18,19 +18,19 @@ POST {{baseURL}}/usuario
 Content-Type: application/json
 
 {
-    "nome": "Luana Maria Gomes",
-    "cpf": "87463214569",
-    "telefone": "11624157863",
-    "data_nascimento": "1994-10-01",
-    "endereco.logradouro": "Rua Saturno",
-    "endereco.bairro": "Jd. Novo Mundo",
-    "endereco.cidade": "Salto",
+    "nome": "João Pereira da Silva",
+    "cpf": "45796512356",
+    "telefone": "11624145763",
+    "data_nascimento": "2000-07-27",
+    "endereco.logradouro": "Av. Tiradentes",
+    "endereco.bairro": "Centro",
+    "endereco.cidade": "Sorocaba",
     "endereco.uf": "SP",
-    "endereco.numero": "654",
-    "endereco.cep": "145314865",
-    "endereco.complemento": "casa",
-    "email": "luana.gomes@hotmail.com",
-    "senha": "luana351"
+    "endereco.numero": "150",
+    "endereco.cep": "13308441",
+    "endereco.complemento": "",
+    "email": "joao.silva@hotmail.com",
+    "senha": "joaosilva123"
 }
 
 ###
@@ -39,10 +39,10 @@ PUT {{baseURL}}/usuario
 Content-Type: application/json
 
 {
-    "_id": "615a421d4b82e7c183c50f45",
-    "nome": "José Alves Silva",
+    "_id": "615b7d6d6e89af4250050755",
+    "nome": "João Pereira da Silva",
     "cpf": "31577678443",
-    "telefone": "11945213287",
+    "telefone": "15456871236",
     "data_nascimento": "2000-03-10",
     "endereco.logradouro": "Praça Pe. Miguel",
     "endereco.bairro": "Centro",
