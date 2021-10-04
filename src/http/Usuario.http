@@ -1,6 +1,11 @@
 //Teste de Requisições REST
 @baseURL = http://localhost:4000
-@id = 615a421d4b82e7c183c50f45
+@id = 615a54dc3a483144f0ef0f03
+
+###
+//GET - Lista as informações do usuário pelo ID informado
+GET {{baseURL}}/usuario/
+Content-Type: application/json
 
 ###
 //GET - Lista as informações do usuário pelo ID informado
@@ -13,17 +18,44 @@ POST {{baseURL}}/usuario
 Content-Type: application/json
 
 {
+    "nome": "Teste",
+    "cpf": "13494167246",
+    "telefone": "11111111111",
+    "data_nascimento": "2001-01-05",
+    "endereco.logradouro": "Rua Manuel Bandeira",
+    "endereco.bairro": "Vila Progresso",
+    "endereco.cidade": "Itu",
+    "endereco.uf": "SP",
+    "endereco.numero": "687",
+    "endereco.cep": "15874321",
+    "endereco.complemento": "",
+    "email": "teste@gmail.com",
+    "senha": "teste"
+}
+
+###
+//POST - Altera um usuário
+PUT {{baseURL}}/usuario
+Content-Type: application/json
+
+{
+    "_id": "615a421d4b82e7c183c50f45",
     "nome": "José Alves Silva",
     "cpf": "31577678443",
     "telefone": "11945213287",
     "data_nascimento": "2000-03-10",
-    "endereco.logradouro": "Av. da Paz Universal",
-    "endereco.bairro": "Jd. Ipanema",
-    "endereco.cidade": "Sorocaba",
+    "endereco.logradouro": "Praça Pe. Miguel",
+    "endereco.bairro": "Centro",
+    "endereco.cidade": "Itu",
     "endereco.uf": "SP",
     "endereco.numero": "1320",
-    "endereco.cep": "13308455",
-    "endereco.complemento": "casa",
+    "endereco.cep": "",
+    "endereco.complemento": "",
     "email": "jose.silva@gmail.com",
     "senha": "teste123"
 }
+
+###
+// DELETE - Apaga a categoria pelo id
+DELETE {{baseURL}}/usuario/{{id}}
+Content-Type: application/json

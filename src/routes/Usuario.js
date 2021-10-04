@@ -57,16 +57,32 @@ const validaUsuario = [
 ]
 
 
-//GET - Mostre as informações pelo ID informado
-router.get('/:id', async (req, res) => {
+//GET - Liste todos os usuários
+router.get('/', async (req, res) => {
     try {
-        const usuario = await Usuario.findbyId(req.params.id)
+        const usuario = await Usuario.find()
         res.json(usuario)
     } catch (e) {
         res.status(500).send({
             errors: [
                 {
-                    message: `Não foi possível obter o ID ${req.params.id}.`
+                    message: `Não foi possível listar os registros.`
+                }
+            ]
+        })
+    }
+})
+
+//GET - Liste os dados pelo ID informado
+router.get('/:id', async (req, res) => {
+    try {
+        const usuario = await Usuario.findById(req.params.id)
+        res.json(usuario)
+    } catch (e) {
+        res.status(500).send({
+            errors: [
+                {
+                    message: `Não foi possível listar os dados do ID ${req.params.id}.`
                 }
             ]
         })
@@ -95,6 +111,52 @@ router.post('/', validaUsuario, async (req, res) => {
             ]
         })
     }
+})
+
+//PUT - Altere os dados do ID informado
+router.put('/', validaUsuario, async(req, res) => {
+    const errors = validationResult(req)
+    if(!errors.isEmpty()){
+        return res.status(400).json(({
+            errors: errors.array()
+        }))
+    }
+
+    try {
+        let dados = req.body
+        await Usuario.findByIdAndUpdate(req.body._id, {$set: dados}, {new: true})
+        .then(usuario => {
+            res.send({
+                message: `Usuário ${usuario.nome} alterado com sucesso!`
+            })
+        })
+        .catch(e => {
+            return res.status(500).send({
+                message: `Erro ao alterar o usuário com o id ${req.body._id}`
+            })
+        })
+    } catch (e) {
+        return res.status(500).json({
+            errors: [{
+                message: `Erro ao alterar o usuário: ${e.message}`
+            }]
+        })
+    }
+})
+
+//DELETE - Apaga o usuário 
+router.delete('/:id', async(req, res) => {
+    await Usuario.findByIdAndRemove(req.params.id)
+    .then(usuario => {
+        res.send({
+            message: `Usuário ${usuario.nome} removido com sucesso!`
+        })
+    })
+    .catch(e => {
+        errors: [{
+            message: `Não foi possível excluir a categoria com o id ${req.params.id}`
+        }]
+    })
 })
 
 module.exports = router
