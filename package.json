@@ -4,6 +4,7 @@
   "description": "Back-end do Busca Imóveis, app que permitirá aos anunciantes divulgar locações e vendas de casas, apartamentos, chácaras e outros tipos de imóveis. Projeto desenvolvido para fixar os conhecimentos em NodeJS, Express e MongoDB.",
   "main": "index.js",
   "scripts": {
+    "start": "node src/index.js",
     "test": "echo \"Error: no test specified\" && exit 1"
   },
   "keywords": [
