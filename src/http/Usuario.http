@@ -1,0 +1,29 @@
+//Teste de Requisições REST
+@baseURL = http://localhost:4000
+@id = 615a421d4b82e7c183c50f45
+
+###
+//GET - Lista as informações do usuário pelo ID informado
+GET {{baseURL}}/usuario/{{id}}
+Content-Type: application/json
+
+###
+//POST - Cadastra um usuário
+POST {{baseURL}}/usuario
+Content-Type: application/json
+
+{
+    "nome": "José Alves Silva",
+    "cpf": "31577678443",
+    "telefone": "11945213287",
+    "data_nascimento": "2000-03-10",
+    "endereco.logradouro": "Av. da Paz Universal",
+    "endereco.bairro": "Jd. Ipanema",
+    "endereco.cidade": "Sorocaba",
+    "endereco.uf": "SP",
+    "endereco.numero": "1320",
+    "endereco.cep": "13308455",
+    "endereco.complemento": "casa",
+    "email": "jose.silva@gmail.com",
+    "senha": "teste123"
+}
