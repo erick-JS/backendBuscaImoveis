@@ -2,6 +2,7 @@ const express = require('express')
 require('dotenv').config() //Carregando as variáveis de ambiente
 const InicializaMongoServer = require('./config/db')
 const rotasUsuario = require('./routes/Usuario')
+const rotasAnuncio = require('./routes/Anuncio')
 
 InicializaMongoServer() //inicializando o MongoDB
 const app = express()
@@ -20,6 +21,7 @@ app.get("/",(req, res) => {
 
 //Rotas do App
 app.use("/usuario", rotasUsuario)
+app.use("/anuncio", rotasAnuncio)
 
 app.use((req, res) => {
     res.status(404).json({

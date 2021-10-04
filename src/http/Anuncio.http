@@ -1,0 +1,79 @@
+//Teste de Requisições REST
+@baseURL = http://localhost:4000
+@id = 615a6a824813d0998c7ee49c
+@id_anunciante = 615a538e3a483144f0ef0ef5
+
+###
+//GET - Lista todos os anúncios
+GET {{baseURL}}/anuncio/
+Content-Type: application/json
+
+###
+//GET - Lista as informações do anúncio pelo ID informado
+GET {{baseURL}}/anuncio/{{id}}
+Content-Type: application/json
+
+###
+//POST - Cadastra um anúncio
+POST {{baseURL}}/anuncio
+Content-Type: application/json
+
+{
+    "descricao": "Vendo chalé em Itu",
+    "endereco.logradouro": "Rua Marechal Rondom",
+    "endereco.bairro": "Vila Nova",
+    "endereco.cidade": "Itu",
+    "endereco.uf": "SP",
+    "endereco.numero": "784",
+    "endereco.cep": "",
+    "endereco.complemento": "",
+    "preco": 150000,
+    "anunciante": "615a715faaf6cbec349ed3d2",
+    "tipo_anuncio": "Locação",
+    "qtd_comodos.garagem": 1,
+    "qtd_comodos.sala": 1,
+    "qtd_comodos.cozinha": 1,
+    "qtd_comodos.quarto": 2,
+    "qtd_comodos.banheiro": 1,
+    "qtd_comodos.quintal": 1,
+    "qtd_comodos.lavanderia": 1,
+    "caracteristicas_aceitas.crianca": true,
+    "caracteristicas_aceitas.pet": true,
+    "caracteristicas_aceitas.churrasqueira": true,
+    "caracteristicas_aceitas.piscina": true,
+    "caracteristicas_aceitas.salao_jogos": true    
+}
+
+###
+//PUT - Altera um anúncio
+PUT {{baseURL}}/anuncio
+Content-Type: application/json
+
+{
+    "_id": "615a6a824813d0998c7ee49c",
+    "descricao": "Alugo casa próxima ao quartel de Itu. Aceito crianças e animais domésticos.",
+    "endereco.logradouro": "Av. Marechal Deodoro",
+    "endereco.bairro": "Centro",
+    "endereco.cidade": "Itu",
+    "endereco.uf": "SP",
+    "endereco.numero": "687",
+    "endereco.cep": "13459124",
+    "endereco.complemento": "",
+    "preco": 1500,
+    "anunciante": "615a538e3a483144f0ef0ef5",
+    "tipo_anuncio": "Locação",
+    "qtd_comodos.garagem": 1,
+    "qtd_comodos.sala": 1,
+    "qtd_comodos.cozinha": 1,
+    "qtd_comodos.quarto": 2,
+    "qtd_comodos.banheiro": 2,
+    "qtd_comodos.quintal": 1,
+    "qtd_comodos.lavanderia": 1,
+    "caracteristicas_aceitas.crianca": true,
+    "caracteristicas_aceitas.pet": true 
+}
+
+###
+// DELETE - Apaga o anúncio pelo id
+DELETE {{baseURL}}/anuncio/{{id}}
+Content-Type: application/json

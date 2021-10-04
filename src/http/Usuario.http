@@ -1,6 +1,6 @@
 //Teste de Requisições REST
 @baseURL = http://localhost:4000
-@id = 615a54dc3a483144f0ef0f03
+@id = 615a421d4b82e7c183c50f45
 
 ###
 //GET - Lista as informações do usuário pelo ID informado
@@ -18,19 +18,19 @@ POST {{baseURL}}/usuario
 Content-Type: application/json
 
 {
-    "nome": "Teste",
-    "cpf": "13494167246",
-    "telefone": "11111111111",
-    "data_nascimento": "2001-01-05",
-    "endereco.logradouro": "Rua Manuel Bandeira",
-    "endereco.bairro": "Vila Progresso",
-    "endereco.cidade": "Itu",
+    "nome": "Luana Maria Gomes",
+    "cpf": "87463214569",
+    "telefone": "11624157863",
+    "data_nascimento": "1994-10-01",
+    "endereco.logradouro": "Rua Saturno",
+    "endereco.bairro": "Jd. Novo Mundo",
+    "endereco.cidade": "Salto",
     "endereco.uf": "SP",
-    "endereco.numero": "687",
-    "endereco.cep": "15874321",
-    "endereco.complemento": "",
-    "email": "teste@gmail.com",
-    "senha": "teste"
+    "endereco.numero": "654",
+    "endereco.cep": "145314865",
+    "endereco.complemento": "casa",
+    "email": "luana.gomes@hotmail.com",
+    "senha": "luana351"
 }
 
 ###
@@ -52,7 +52,7 @@ Content-Type: application/json
     "endereco.cep": "",
     "endereco.complemento": "",
     "email": "jose.silva@gmail.com",
-    "senha": "teste123"
+    "senha": "josesilva"
 }
 
 ###
