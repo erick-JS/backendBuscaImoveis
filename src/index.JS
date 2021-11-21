@@ -30,5 +30,5 @@ app.use((req, res) => {
 })
 
 app.listen(PORT, (req, res)=> {
-    console.log(`Servidor Web iniciado na porta ${PORT}`)
+    console.log(`Servidor Web iniciado na porta ${PORT}.`)
 })
