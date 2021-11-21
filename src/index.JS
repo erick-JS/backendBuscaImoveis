@@ -1,4 +1,5 @@
 const express = require('express')
+const cors = require('cors') //Habilita o CORS - Cross-origin resource sharing
 require('dotenv').config() //Carregando as variáveis de ambiente
 const InicializaMongoServer = require('./config/db')
 const rotasUsuario = require('./routes/Usuario')
@@ -10,6 +11,7 @@ const app = express()
 const PORT = process.env.PORT
 
 app.use(express.json())
+app.use(cors()) //CORS
 
 //Primeira rota do servidor
 app.get("/",(req, res) => {
